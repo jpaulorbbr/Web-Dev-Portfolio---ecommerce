@@ -1,0 +1,59 @@
+body {
+    background-color: grey;
+    color: white;
+    text-align: center;
+}
+
+.admin-login-board form label {
+    color: darkgray;
+}
+
+.navbar-custom {
+    background-color: darkgray !important;    
+}
+
+.body-title {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border: 2px solid white;
+}
+
+.body-sales {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border: 2px solid white;
+}
+
+.admin-register-form {
+    color: darkgrey;
+}
+
+.admin-register-form form label, .admin-register-form h1 {
+    color: black;
+}
+
+.admin-users-add-users-link {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+}
+
+.admin-users-add-users-link:visited {
+    text-decoration: none;
+}
+
+.admin-users-add-users-img {
+    width: 20px;
+    height: 20px;
+}
+
+.admin-users-individual-link {
+    color: white;
+    /*margin-bottom: 1px white solid;*/
+}
+
+.admin-users-individual-p {
+    border-top: 3px solid white;
+    padding-bottom: 5px;
+    border-bottom: 3px solid white;
+}
