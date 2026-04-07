@@ -194,3 +194,7 @@ body {
 .admin-profile-wb {
     color: black;
 }
+
+.admin-profile-second-h2 {
+    text-decoration: underline;
+}

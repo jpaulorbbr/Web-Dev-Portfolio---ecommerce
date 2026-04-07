@@ -26,8 +26,17 @@ SECRET_KEY = 'django-insecure-59l4ijsn*10pfp+h0e*x=+icgj4kvxskqf-*fr^ki6vdh)hzj8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-
+ALLOWED_HOSTS = [
+    'localhost', 
+    '127.0.0.1',
+    '.preview.app.github.dev',
+    '.github.dev',
+]
+CSRF_TRUSTED_ORIGINS = [
+    'https://localhost:8000',
+    'https://*.preview.app.github.dev', # This wildcard allows all subdomains
+    'https://*github.dev', # For standard github.dev URLs
+]
 
 # Application definition
 

@@ -7,6 +7,12 @@
     <meta charset="UTF-8"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'admin/css/admin-css.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 1. Include the CSS first (important for styling) -->
+    <link rel="stylesheet" href="{% static 'admin/react/build/assets/main-D64VDMd1.css' %}">
+    
+    
 </head>
 <body>
     {% load static %}
@@ -21,10 +27,24 @@
                 </div>
             {% endfor %}
         {% endif %}
+
     {% block bodyblock %}
-    {% load static %}
+    
+        {% load static %}
+        
+        <div 
+            id="react-root" 
+            data-user="{{ selected_user }}"
+            data-api-url=""
+        ></div>
+
+        <!--url 'api-endpoint'-->
+
     {% endblock %}
+    
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- 2. Then the React JS bundle -->
+    <script type="module" src="{% static 'admin/react/build/assets/main-z5n3Xy84.js' %}"></script>
 </body>
 </html>

@@ -294,8 +294,8 @@ def admin_profile(request):
         messages.success(request, ("You are not of the admin team."))
         return redirect("admin_no_access")
     
-    user_logged_in_username = request.user.username
-    user_selected = CustomUser.objects.filter(username=user_logged_in_username)
+    user_logged_in = request.user
+    user_selected = CustomUser.objects.filter(username=user_logged_in)
     
     return render(
         request,
