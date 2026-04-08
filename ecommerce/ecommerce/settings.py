@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'rest_framework',
     'corsheaders',
+    'django_vite',
     #'django.contrib.admin',
 ]
 
@@ -141,13 +142,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Static (CSS)
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+DJANGO_VITE = {
+    "default": {
+        "dev_mode": True,
+        #"static_url": STATIC_URL,
+    }
+}
 
 #Media Servers
 

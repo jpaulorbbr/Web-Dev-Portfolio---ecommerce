@@ -1,4 +1,5 @@
 {% load static %}
+{% load django_vite %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'admin/css/admin-css.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    
+    {% vite_hmr_client %}
+    {% vite_asset 'src/main.tsx' %}
 </head>
 <body>
     {% load static %}
@@ -33,20 +33,11 @@
         <!--url 'api-endpoint'-->
 
         <!-- This is where React will render -->
-        <div id="react-root"
-            data-user="{{ request.user.username|default:''|escape }}"
-            data-is-authenticated="{{ request.user.is_authenticated|yesno:'true,false' }}"
-            data-page-title="React Admin Dashboard">
-        </div>
-
+        <div id="root"></div>
     {% endblock %}
     
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-    <!-- 1. Include the CSS first (important for styling) -->
-    <link rel="stylesheet" href="{% static 'admin/react/build/assets/main-D64VDMd1.css' %}">
-    <!-- 2. Then the React JS bundle -->
-    <script type="module" src="{% static 'admin/react/build/assets/main-BPh5czPo.js' %}"></script>
 </body>
 </html>
