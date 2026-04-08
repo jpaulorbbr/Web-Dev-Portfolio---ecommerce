@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'admin/css/admin-css.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% vite_hmr_client %}
-    {% vite_asset 'src/main.tsx' %}
+    {% vite_asset 'src/main.jsx' %}
 </head>
 <body>
     {% load static %}
@@ -34,6 +34,9 @@
 
         <!-- This is where React will render -->
         <div id="root"></div>
+
+        {% vite_hmr_client %}
+        {% vite_asset 'src/main.jsx' %}
     {% endblock %}
     
     </div>

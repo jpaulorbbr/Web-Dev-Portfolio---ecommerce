@@ -150,10 +150,17 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+IS_CODESPACES = "CODESPACE_NAME" in os.environ
+
 DJANGO_VITE = {
     "default": {
-        "dev_mode": True,
-        #"static_url": STATIC_URL,
+        "dev_mode": True,   # ou DEBUG
+        "dev_server_protocol": "https",
+        "dev_server_host": (
+            f"{os.getenv('CODESPACE_NAME')}-5173.{os.getenv('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN')}"
+            if IS_CODESPACES else "localhost"
+        ),
+        "dev_server_port": 5173,
     }
 }
 
