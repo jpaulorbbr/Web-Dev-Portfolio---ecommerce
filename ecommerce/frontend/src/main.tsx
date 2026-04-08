@@ -1,29 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import './index.css';
+import App from './App.tsx';
 
-const rootElement = document.getElementById('react-root') as HTMLElement;
+const container = document.getElementById('react-root');
 
-if (!rootElement) {
-  console.error('React root element not found!')
+if (!container) {
+  console.error('❌ React root element (#react-root) not found in the HTML!');
 } else {
-  // Extract all data-* attributes
-  const props = {
-    user: rootElement.dataset.userId,
-    isAuthenticated: rootElement.dataset.isAuthenticated === 'true',
-    pageTitle: rootElement.dataset.pageTitle,
-    // For complex JSON data
-    items: rootElement.dataset.items 
-      ? JSON.parse(rootElement.dataset.items) 
-      : [],
-  }
+  const root = ReactDOM.createRoot(container);
 
-  ReactDOM.createRoot(rootElement).render(
+  // Extract data from Django template
+  const props = {
+    username: container.dataset.user,           // changed from userId
+    isAuthenticated: container.dataset.isAuthenticated === 'true',
+    pageTitle: container.dataset.pageTitle || "Django + React Admin",
+  };
+
+  root.render(
     <React.StrictMode>
       <App {...props} />
     </React.StrictMode>
-  )
+  );
 }

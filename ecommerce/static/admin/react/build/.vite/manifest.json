@@ -1,28 +1,11 @@
 {
-  "src/assets/hero.png": {
-    "file": "assets/hero-5sT3BiRD.png",
-    "src": "src/assets/hero.png"
-  },
-  "src/assets/react.svg": {
-    "file": "assets/react-CHdo91hT.svg",
-    "src": "src/assets/react.svg"
-  },
-  "src/assets/vite.svg": {
-    "file": "assets/vite-BF8QNONU.svg",
-    "src": "src/assets/vite.svg"
-  },
   "src/main.tsx": {
-    "file": "assets/main-z5n3Xy84.js",
+    "file": "assets/main-v5VsLuSJ.js",
     "name": "main",
     "src": "src/main.tsx",
     "isEntry": true,
     "css": [
       "assets/main-D64VDMd1.css"
-    ],
-    "assets": [
-      "assets/react-CHdo91hT.svg",
-      "assets/vite-BF8QNONU.svg",
-      "assets/hero-5sT3BiRD.png"
     ]
   }
 }
