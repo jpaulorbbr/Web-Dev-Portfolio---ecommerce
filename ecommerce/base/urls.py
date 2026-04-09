@@ -1,10 +1,9 @@
 from django.urls import path, re_path
-
-from base import views
+from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('index/', views.comment_test, name='comment_test'),
+    path('index2/', views.comment_test, name='comment_test'),
     #path('index/', views.exemplo_index, name='index'),
     #path('parametros/fixo/', views.exemplo_parametro_fixo, name='exemplo_parametro_fixo'),
     #path('parametros/<str:usuario>/', views.exemplo_parametro, name='exemplo_parametro'),

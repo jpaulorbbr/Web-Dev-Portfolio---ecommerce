@@ -6,7 +6,7 @@ from django.urls.base import reverse
 
 def home(request):
     #return HttpResponse("<h1>Hello World</h1>")
-    return render(request, "pages/home.html", context={}, status=200)
+    return render(request, 'index.html')
 
 """
 def exemplo_index(request):
