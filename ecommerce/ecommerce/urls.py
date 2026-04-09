@@ -29,10 +29,11 @@ urlpatterns = [
     path('admin/', include('admin.urls')),
     path('api/', include('api.urls')),
     #path('', home, name='home'),
-    path('', include('base.urls')),
-    path('store/', include('products.urls'), name='products_store'),
+    path('', TemplateView.as_view(template_name='index.html')),  # React assume tudo
+    path('store/', TemplateView.as_view(template_name='index.html')),
+    path('products/', TemplateView.as_view(template_name='index.html')),
     #path('store/<str:product_category>', include('products.urls')),
     path('members/', include('django.contrib.auth.urls')),
     path('members/', include('members.urls')),
-    re_path(r'^.*$', TemplateView.as_view(template_name='index.html'), name='index'),
+    #re_path(r'^.*$', TemplateView.as_view(template_name='index.html'), name='index'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
